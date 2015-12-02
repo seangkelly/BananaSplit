@@ -105,7 +105,7 @@ public class LvlStart : MonoBehaviour {
 		{
 
 			//make it random
-			Application.LoadLevel(1);
+			Application.LoadLevel(Random.Range(1, Application.levelCount));
 		}
 
 

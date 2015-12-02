@@ -154,7 +154,7 @@ public class Lvl2 : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space)&& activegame == false)
 		{
-			Application.LoadLevel(3);
+			Application.LoadLevel(Random.Range(1, Application.levelCount));
 			Prompt.text = ("sry we have no more lvls");
 		}
 		
