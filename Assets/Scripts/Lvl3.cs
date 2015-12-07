@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 
+// DONT PRESS BANANA
+
 public class Lvl3 : MonoBehaviour {
 
 	
@@ -37,7 +39,7 @@ public class Lvl3 : MonoBehaviour {
 		
 		
 		//use this to drop in prompts
-		Prompt.text = ("DONT have your button pressed!");
+		Prompt.text = ("DONT have your banana pressed!");
 
 
 		Player1.text = ("Player 1: " + LvlStart.player1Score);

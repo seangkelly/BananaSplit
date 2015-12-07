@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 
+//PRESS BANANA WHEN THE TIMER REACHES 5
+
 public class Lvl4 : MonoBehaviour {
 	
 	
@@ -44,7 +46,7 @@ public class Lvl4 : MonoBehaviour {
 		
 		
 		//use this to drop in prompts
-		Prompt.text = ("Press your key when the timer reaches 5! \nTimer: ");
+		Prompt.text = ("Press your banana when the timer reaches 5! \nTimer: ");
 		
 		
 		Player1.text = ("Player 1: " + LvlStart.player1Score);
@@ -151,6 +153,12 @@ public class Lvl4 : MonoBehaviour {
 			active4 = false;
 			time4.text = ("Loser");
 			
+		}
+
+		if (active1 == false && active2 == false && active3 == false && active4 == false)
+		{
+			activegame =false;
+			Prompt.text = ("You all lose, how embarrassing. \n Press space to go to the next level, losers. ");
 		}
 		
 		if (Input.GetKeyDown(KeyCode.Space)&& activegame == false)

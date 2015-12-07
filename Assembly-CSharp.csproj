@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Lvl3.cs" />
      <Compile Include="Assets\Scripts\Lvl4.cs" />
      <Compile Include="Assets\Scripts\Lvl5.cs" />
+     <Compile Include="Assets\Scripts\Lvl6.cs" />
      <Compile Include="Assets\Scripts\LvlStart.cs" />
      <Compile Include="Assets\Scripts\MusicalChairs.cs" />
      <Compile Include="Assets\Scripts\ScaleScript.cs" />

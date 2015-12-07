@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+//PRESS BANANA 10 TIMES
 
 public class Lvl1 : MonoBehaviour {
 
@@ -39,7 +40,7 @@ public class Lvl1 : MonoBehaviour {
 		
 		
 		//use this to drop in prompts
-		Prompt.text = ("Press your key 10 times!");
+		Prompt.text = ("Press your banana 10 times!");
 
 
 		Player1.text = ("Player 1: " + LvlStart.player1Score);

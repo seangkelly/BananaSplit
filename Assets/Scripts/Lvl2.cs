@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 
+//HOLD BANANA FOR 5 SECONDS
+
 public class Lvl2 : MonoBehaviour {
 
 	
@@ -33,7 +35,7 @@ public class Lvl2 : MonoBehaviour {
 		
 		
 		//use this to drop in prompts
-		Prompt.text = ("Hold your key for 5 seconds!");
+		Prompt.text = ("Hold your banana for 5 seconds!");
 
 
 		Player1.text = ("Player 1: " + LvlStart.player1Score);

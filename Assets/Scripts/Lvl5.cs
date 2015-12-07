@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Lvl5 : MonoBehaviour {
 
 
+	//PRESS BANANA AS MANY TIMES AS POSSIBLE
+
 	public Text Level;
 	public Text Prompt;
 	public Text Player1;
@@ -28,10 +30,11 @@ public class Lvl5 : MonoBehaviour {
 	public Text presses3;
 	public Text presses4;
 	
-	float timeLeft = 5.0f;
+	float timeLeft = 5.0f;	
 	
 	public string winner;
 	private bool activegame;
+	private bool scoreIncremented;
 	bool existingWinner;
 
 
@@ -43,7 +46,7 @@ public class Lvl5 : MonoBehaviour {
 		
 		
 		//use this to drop in prompts
-		Prompt.text = ("Press your key as many times as possible in 5 seconds!");
+		Prompt.text = ("Press your key as many times as possible in 5 seconds!" + timeLeft.ToString());
 		
 		
 		Player1.text = ("Player 1: " + LvlStart.player1Score);
@@ -60,6 +63,7 @@ public class Lvl5 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Prompt.text = ("Press your key as many times as possible in 5 seconds!" + timeLeft.ToString());
 		if(activegame) {
 			timeLeft -= Time.deltaTime;
 		}
@@ -96,7 +100,7 @@ public class Lvl5 : MonoBehaviour {
 		}
 
 		if ((timeLeft - Time.deltaTime) < 0) {
-			activegame = false;
+			activegame = false;	
 			timeLeft = 0;
 			endCounts[0] = count1;
 			endCounts[1] = count2;
@@ -104,47 +108,55 @@ public class Lvl5 : MonoBehaviour {
 			endCounts[3] = count4;
 			System.Array.Sort (endCounts);
 
-			if(endCounts[3] == count1){
-				winner += "Player 1";	
-				LvlStart.player1Score += 1;
-				existingWinner = true;
-			
-			}
-			if(endCounts[3] == count2){
-				if (existingWinner) {
-					winner += " and Player 2";
-				}
-				else {
-					existingWinner = true;
-					winner += "Player 2";
-				}
+		}
 
-				LvlStart.player2Score += 1;
+		if (activegame == false)  {
+			if (existingWinner == false) {
+				if(endCounts[3] == count1){
+					winner = "Player 1";	
+					LvlStart.player1Score ++;
+					existingWinner = true;
+					
+				}
+				if(endCounts[3] == count2){
+					if (existingWinner) {
+						winner += " and Player 2";
+					}
+					else {
+						existingWinner = true;
+						winner += "Player 2";
+					}
+					
+					LvlStart.player2Score += 1;
+					
+				}
+				if(endCounts[3] == count3){
+					
+					if (existingWinner) {
+						winner += " and Player 3";
+					}
+					else {
+						existingWinner = true;
+						winner += "Player 3";
+					}
+					LvlStart.player3Score += 1;
+				}
+				if(endCounts[3] == count4){
+					if (existingWinner) {
+						winner += " and Player 4";
+					}
+					else {
+						existingWinner = true;
+						winner += "Player 4";
+					}
+					LvlStart.player4Score += 1;
+				}
+			}
+			Prompt.text = (winner + " has won... press [space] to go to next lvl.");
 				
-			}
-			if(endCounts[3] == count3){
-
-				if (existingWinner) {
-					winner += " and Player 3";
-				}
-				else {
-					existingWinner = true;
-					winner += "Player 3";
-				}
-				LvlStart.player3Score += 1;
-			}
-			if(endCounts[3] == count4){
-				if (existingWinner) {
-					winner += " and Player 4";
-				}
-				else {
-					existingWinner = true;
-					winner += "Player 4";
-				}
-				LvlStart.player4Score += 1;
-			}
 
 		}
+
 		
 		if (Input.GetKeyDown(KeyCode.Space) && activegame == false )
 		{

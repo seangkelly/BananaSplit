@@ -34,7 +34,8 @@ public class LvlStart : MonoBehaviour {
 
 
 		//use this to drop in prompts
-		Prompt.text = ("Welcome to the game. Player 1's key is 1, player 2's key is 2, player 3's key is 3, and player 4's key is 4. Press [space] to start.");
+		Prompt.text = ("Welcome to the game. \nOne of your hands must be touching the metal magic strip at all times! \n" +
+			"Pick a banana, and press [space] to start!");
 	
 
 		Player1.text = ("Player 1: " + LvlStart.player1Score);
